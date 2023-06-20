@@ -1,0 +1,38 @@
+--Create a store database
+
+CREATE TABLE pet_store (id INTEGER PRIMARY KEY, brand TEXT, name TEXT, department TEXT, color TEXT, price INTEGER);
+
+INSERT INTO pet_store VALUES (1, "QUICK", "Expandable Collar", "dog", "black", 25.99);
+INSERT INTO pet_store VALUES (2, "QUICK", "Leash", "dog", "black", 15.99);
+INSERT INTO pet_store VALUES (3, "QUICK", "Harness", "dog", "red", 35.99);
+INSERT INTO pet_store VALUES (4, "QUICK", "Harness", "dog", "black", 35.99); 
+INSERT INTO pet_store VALUES (5, "MIGHTY", "Water Bowl", "dog", "metal", 8.99); 
+INSERT INTO pet_store VALUES (6, "MIGHTY", "Water Bowl", "dog", "bamboo", 10.99); 
+INSERT INTO pet_store VALUES (7, "MIGHTY", "12 in. Food Bowl", "dog", "metal", 8.99); 
+INSERT INTO pet_store VALUES (8, "MIGHTY", "6 in. Food Bowl", "dog", "metal", 5.99);
+INSERT INTO pet_store VALUES (9, "MIGHTY", "Fly Stick", "cat", "bamboo", 7.99); 
+INSERT INTO pet_store VALUES (10, "T&P", "Cat Nip Toy", "cat", "green", 12.99); 
+INSERT INTO pet_store VALUES (11, "T&P", "Grooming Brush", "cat", "metal", 6.99);
+INSERT INTO pet_store VALUES (12, "AQUAMAIN", "6 Gallon Tank", "fish", "glass", 52.99);
+INSERT INTO pet_store VALUES (13, "FS", "Beta Food", "fish", "yellow", 7.99); 
+INSERT INTO pet_store VALUES (14, "FS", "Small Net", "fish", "green", 3.99); 
+INSERT INTO pet_store VALUES (15, "PETDREAM", "32 in Bed", "dog", "blue", 59.99);
+
+--display the database ordered by price.
+SELECT * FROM pet_store 
+ORDER BY price;
+
+--display each unique item's brand and department. 
+SELECT id, brand, department 
+FROM pet_store 
+ORDER BY brand asc, department asc;
+
+--what is the average price of each brands item? 
+SELECT brand, AVG(price) "Average Price" 
+FROM pet_store 
+GROUP BY brand;
+
+--what is the total price of each item within a department? 
+SELECT department, SUM(price) "Total Price"
+FROM pet_store 
+GROUP BY department;
