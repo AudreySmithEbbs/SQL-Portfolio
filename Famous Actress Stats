@@ -1,0 +1,149 @@
+I generated the following list of 20 famous actresses and created various tables with additional information about their work to discover commonalities between them. 
+
+CREATE TABLE Famous_People 
+(id INTEGER PRIMARY KEY, 
+name TEXT, 
+age INTEGER, 
+hometown TEXT, 
+country TEXT, 
+oscar_emmy_wins INTEGER);
+
+INSERT INTO Famous_People VALUES (1, "Julia Roberts", 55, "Georgia", "USA", 1);
+INSERT INTO Famous_People VALUES (2, "Florence Pugh", 27, "Oxford", "UK", 0);
+INSERT INTO Famous_People VALUES (3, "Sandra Bullock", 58, "Virginia", "USA", 1);
+INSERT INTO Famous_People VALUES (4, "Cate Blanchett", 54, "Ivanhoe", "AUS", 2); 
+INSERT INTO Famous_People VALUES (5, "Margot Robbie", 33, "Dalby", "AUS", 1); 
+INSERT INTO Famous_People VALUES (6, "Jessica Chastain", 46, "California", "USA", 1); 
+INSERT INTO Famous_People VALUES (7, "Nicole Kidman", 54, "Sydney", "AUS", 2);
+INSERT INTO Famous_People VALUES (8, "Hailee Steinfeld", 26, "California", "USA", 0); 
+INSERT INTO Famous_People VALUES (9, "Anne Hathaway", 40, "New York", "USA", 1);
+INSERT INTO Famous_People VALUES (10, "Viola Davis", 57, "South Carolina", "USA", 2);
+INSERT INTO Famous_People VALUES (11, "Jennifer Lopez", 53, "New York", "USA", 0);
+INSERT INTO Famous_People VALUES (12, "Emily Blunt", 40, "London", "UK", 0); 
+INSERT INTO Famous_People VALUES (13, "Michelle Yeoh", 60, "Ipoh", "Malaysia", 1);
+INSERT INTO Famous_People VALUES (14, "Jennifer Lawrence", 32, "Kentucky", "USA", 1);
+INSERT INTO Famous_People VALUES (15, "Rooney Mara", 38, "New York", "USA", 0);
+INSERT INTO Famous_People VALUES (16, "Catherine O'Hara", 69, "Toronto", "CAN", 1);
+INSERT INTO Famous_People VALUES (17, "Awkwafina", 35, "New York", "USA", 0);
+INSERT INTO Famous_People VALUES (18, "Melissa McCarthy", 52, "Illinois", "USA", 1);
+INSERT INTO Famous_People VALUES (19, "Zendaya", 26, "California", "USA", 2);
+INSERT INTO Famous_People VALUES (20, "Kate Winslet", 47,"Reading", "UK", 3);
+
+CREATE TABLE Known_For 
+(star_id INTEGER, 
+film TEXT, 
+director TEXT, 
+year INTEGER, 
+rotten_Tomato NUMERIC);
+
+INSERT INTO Known_For VALUES (1, "Pretty Woman", "Garry Marshall", 1999, 64); 
+INSERT INTO Known_For VALUES (2, "Midsommar", "Ari Aster", 2019, 83);
+INSERT INTO Known_For VALUES (3, "Miss Congeniality", "Donald Petrie", 2000, 41);
+INSERT INTO Known_For VALUES (4, "Carol", "Todd Haynes", 2016, 94);
+INSERT INTO Known_For VALUES (5, "I,Tonya", "Craig Gellepsie", 2018, 90);
+INSERT INTO Known_For VALUES (6, "Zero Dark Thirty", "Kathryn Bigelow", 2013, 91);
+INSERT INTO Known_For VALUES (7, "Moulin Rouge", "Baz Lurhman", 2001, 75);
+INSERT INTO Known_For VALUES (8, "The Edge of Seventeen", "Kelly Fremon Craig", 2016, 94); 
+INSERT INTO Known_For VALUES (9, "The Devil Wears Prada", "David Frankel", 2006, 75); 
+INSERT INTO Known_For VALUES (10, "Woman King", "Gina Prince-Bythewood", 2002, 94); 
+INSERT INTO Known_For VALUES (11, "Selena", "Gregory Nava", 1997, 67); 
+INSERT INTO Known_For VALUES (12, "Sicario", "Denis Villeneuve", 2015, 92);
+INSERT INTO Known_For VALUES (13, "Everything Everywhere All At Once", "The Daniels", 2022, 93); 
+INSERT INTO Known_For VALUES (14, "Hunger Games", "Gary Ross", 2012, 84); 
+INSERT INTO Known_For VALUES (15, "Girl With The Dragon Tattoo", "David Fincher", 2011, 86); 
+INSERT INTO Known_For VALUES (16, "Best In Show", "Christopher Guest", 2000, 93);  
+INSERT INTO Known_For VALUES (17, "The Farewell", "Lulu Wang", 2019, 97);
+INSERT INTO Known_For VALUES (18, "Bridesmaids", "Paul Feig", 2011, 89);
+INSERT INTO Known_For VALUES (19, "Spider Man: Homecoming", "John Watts", 2017, 92); 
+INSERT INTO Known_For VALUES (20, "Titanic", "James Cameron", 1997, 88); 
+
+CREATE TABLE CoStars 
+(star_id INTEGER, 
+name TEXT, 
+costar1_id INTEGER, 
+costar2_id INTEGER, 
+costar3_id INTEGER, 
+costar4_id INTEGER, 
+costar5_id INTEGER, 
+costar6_id INTEGER, 
+costar7_id INTEGER, 
+costar8_id INTEGER);
+
+INSERT INTO CoStars VALUES (1, "Julia Roberts", 7, 10, 9, 12, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (2, "Florence Pugh", 8, 19, 12, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (3, "Sandra Bullock",9, 18, 7, 4, 17, 18, 10, 0);
+INSERT INTO CoStars VALUES (4, "Cate Blanchett", 9, 15, 3, 17, 13, 14, 19, 0);
+INSERT INTO CoStars VALUES (5, "Margot Robbie", 10, 7, 9, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (6, "Jessica Chastain", 10, 13, 9, 12, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (7, "Nicole Kidman", 18, 1, 5, 15, 17, 19, 0, 0);
+INSERT INTO CoStars VALUES (8, "Hailee Steinfeld", 2, 10, 16, 17, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (9, "Anne Hathaway", 3, 4, 12, 17, 6, 5, 10, 19);
+INSERT INTO CoStars VALUES (10, "Viola Davis", 6, 1, 3, 5 , 8, 9, 11, 0);
+INSERT INTO CoStars VALUES (11, "Jennifer Lopez", 10, 18, 0, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (12, "Emily Blunt", 9, 1, 2, 6, 16, 17, 0, 0);
+INSERT INTO CoStars VALUES (13, "Michelle Yeoh", 17, 4, 20, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (14, "Jennifer Lawrence", 4, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (15, "Rooney Mara", 4, 7, 0, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (16, "Catherine O'Hara", 8, 12, 0, 0, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (17, "Awkwafina", 3, 4, 9, 13, 7, 8, 12, 18);
+INSERT INTO CoStars VALUES (18, "Melissa McCarthy", 3, 7, 11, 17, 20, 0, 0, 0);
+INSERT INTO CoStars VALUES (19, "Zendaya", 2, 4, 7, 9, 0, 0, 0, 0);
+INSERT INTO CoStars VALUES (20, "Kate Winslet", 13, 18 , 0, 0, 0, 0, 0, 0);
+
+CREATE TABLE Super_Hero_Universe 
+(star_id INTEGER, 
+universe TEXT, 
+character TEXT, 
+appears_in TEXT);
+INSERT INTO Super_Hero_Universe VALUES (2, "Marvel", "Yelena Belova", "Black Widow");
+INSERT INTO Super_Hero_Universe VALUES (4, "Marvel", "Hela", "Thor");
+INSERT INTO Super_Hero_Universe VALUES (5, "DC", "Harley Quinn", "Suicide Squad");
+INSERT INTO Super_Hero_Universe VALUES (7, "DC", "Atlanna", "Aquaman");
+INSERT INTO Super_Hero_Universe VALUES (8, "Marvel", "Kate Bishop", "Hawkeye");
+INSERT INTO Super_Hero_Universe VALUES (8, "Marvel", "Gwen Stacey", "Spiderman: Into the Spider-Verse");
+INSERT INTO Super_Hero_Universe VALUES (10, "DC", "Amanda Waller", "Suicide Squad"); 
+INSERT INTO Super_Hero_Universe VALUES (13, "Marvel", "Ying Nan", "Shang-Chi");
+INSERT INTO Super_Hero_Universe VALUES (13, "Marvel", "Aleta Ogord", "Guardians of the Galaxy");
+INSERT INTO Super_Hero_Universe VALUES (17, "Marvel", "Katy Chen", "Shang Chi");
+INSERT INTO Super_Hero_Universe VALUES (18, "Marvel", "Hela (play version)", "Thor");
+INSERT INTO Super_Hero_Universe VALUES (19, "Marvel", "MJ", "Spiderman: Homecoming");
+
+--which actresses have appeared in a superhero film before? Who did they play, and which comic universe did their character belong to? 
+SELECT Super_Hero_Universe.character Character, Famous_People.name Actress, Super_Hero_Universe.universe Universe
+FROM Famous_People
+JOIN Super_Hero_Universe
+ON Famous_People.id = Super_Hero_Universe.star_id
+ORDER BY Super_Hero_Universe.character;
+
+--display which films the 20 actresses are known for. 
+SELECT Famous_People.name "Actress", Known_For.film "Known For"
+FROM Famous_People
+JOIN Known_For
+ON Famous_People.id = Known_For.star_id
+ORDER BY Famous_People.age;
+
+--display which countries the 20 actresses are from. 
+SELECT name Actress, country Country FROM Famous_People
+ORDER BY country;
+
+--per each actress, which other actresses has she appeared in a film with? 
+SELECT A.name Actress, Z1.name "Co-Star", Z2.name "Co-Star", Z3.name "Co-Star", Z4.name "Co-Star", Z5.name "Co-Star", Z6.name "Co-Star", Z7.name "Co-Star", Z8.name "Co-Star"
+FROM CoStars A
+LEFT JOIN Famous_People Z1
+ON Z1.id = A.costar1_id
+LEFT JOIN Famous_People Z2
+On Z2.id = A.costar2_id
+LEFT JOIN Famous_People Z3
+ON Z3.id = A.costar3_id
+LEFT JOIN Famous_People Z4
+ON Z4.id = A.costar4_id
+LEFT JOIN Famous_People Z5
+ON Z5.id = A.costar5_id
+LEFT JOIN Famous_People Z6
+ON Z6.id = A.costar6_id
+LEFT JOIN Famous_People Z7
+ON Z7.id = A.costar7_id
+LEFT JOIN Famous_People Z8
+ON Z8.id = A.costar8_id
+ORDER BY Actress; 
+
